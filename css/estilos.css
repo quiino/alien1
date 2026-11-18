@@ -1,0 +1,128 @@
+:root {
+    --rosa-pastel: #d7aeff;
+    --verde-pastel: #bcf2f2;
+    --gris-fondo: #172d2d;
+}
+
+body {
+    background-color: var(--gris-fondo);
+    color: #e2e8f0;
+}
+
+.header-institucional {
+    background: linear-gradient(135deg, #ecb4fa, #b4ffe3);
+    color: #4a2e4b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.vista-previa {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+}
+
+#contenedor-tarjetas {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#contenedor-tarjetas > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 576px) {
+    #contenedor-tarjetas > .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    #contenedor-tarjetas > .col {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+.tarjeta .card-img-top {
+    height: 140px;
+    object-fit: cover;
+}
+
+.etiqueta {
+    background-color: var(--rosa-pastel);
+    color: #333;
+    font-weight: 500;
+    font-size: 0.75rem;
+}
+
+.card-footer .btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.4rem;
+}
+
+.tarjeta-info-amarilla {
+    background-color: #c8c8c8 !important;
+    color: #0d2e20 !important;
+    border: 1px solid #c8c8c8;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Estrellas */
+.estrellas-tarjeta {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.estrellas-tarjeta .estrella {
+    color: #4a6b6b;
+    cursor: pointer;
+    transition: color 0.15s, transform 0.1s;
+    user-select: none;
+}
+
+.estrellas-tarjeta .estrella.activa { 
+    color: #f5b301; 
+}
+
+.estrellas-tarjeta:not(.votado) .estrella:hover,
+.estrellas-tarjeta:not(.votado) .estrella:hover ~ .estrella {
+    color: #ffc933;
+}
+
+.estrellas-tarjeta:not(.votado) .estrella:hover { 
+    transform: scale(1.15); 
+}
+
+.estrellas-tarjeta.votado .estrella { 
+    cursor: default; 
+}
+
+.form-control, .form-select {
+    background-color: #172d2d;
+    border-color: #2a4d4d;
+    color: #ffffff;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #172d2d;
+    border-color: var(--rosa-pastel);
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(215, 174, 255, 0.25);
+}
+
+.form-control::placeholder {
+    color: #8da4a4;
+}
+
+.modal-header, .modal-footer {
+    border-color: #070707;
+}
